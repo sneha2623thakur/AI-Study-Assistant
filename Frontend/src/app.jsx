@@ -3,10 +3,24 @@ import React, { useState, useEffect, useRef } from 'react';
 const SUBJECT_ICONS = {
   Mathematics: '📐',
   Physics: '⚛️',
+  Biology: '🔬',
+  Geology: '⛰️',
+  Psychology: '🧠',
+  Anatomy: '🧬',
+  Astronomy: '🌌',
+  Geography: '🌍',
+  ComputerScience: '🖥️',
+  Sociology: '👥',
+  Statistics: '📊',
+  Science: '🔭',
+  Hindi: '📝',
+  Marathi: '📝',
+  English: '📚',
   Chemistry: '🧪',
   Literature: '📖',
   History: '🏛️',
   Programming: '💻',
+
 };
 
 // Helper function to render clean HTML from AI markdown text across all corners
@@ -261,14 +275,14 @@ export default function App() {
                 className="p-5 rounded-2xl bg-gradient-to-br from-pink-50 to-white border border-pink-200 hover:border-pink-400 cursor-pointer transition group shadow-md"
               >
                 <div className="h-12 w-12 mx-auto mb-3 rounded-xl bg-pink-100 border border-pink-200 flex items-center justify-center text-pink-600 shadow-inner">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3.3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                 </div>
                 <h3 className="font-extrabold text-pink-900 text-sm group-hover:text-pink-600 transition">Parent Corner</h3>
                 <p className="text-[11px] text-slate-500 mt-1">Project guides & home mentorship.</p>
               </div>
             </div>
 
-            {/* Quick Navigation Extra Buttons */}
+            {/* Middle: Explore Info Hub & Explore Study Tips Buttons */}
             <div className="grid grid-cols-2 gap-3 pt-2 border-t border-sky-200/60 text-xs">
               <button 
                 onClick={() => setPage('info')}
@@ -284,6 +298,27 @@ export default function App() {
                 <svg className="w-4 h-4 text-pink-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
                 Explore Study Tips
               </button>
+            </div>
+
+            {/* Quick Prompt Tips Banner at the End */}
+            <div className="bg-sky-50/80 border border-sky-200/60 rounded-2xl p-4 text-left shadow-sm">
+              <h4 className="text-xs font-bold text-sky-900 uppercase tracking-wide mb-2 flex items-center gap-1.5">
+                <span>💡</span> Prompting Tips for Best Results
+              </h4>
+              <ul className="grid grid-cols-1 md:grid-cols-3 gap-2 text-[11px] text-slate-600">
+                <li className="bg-white/60 p-2 rounded-xl border border-sky-100">
+                  <span className="font-bold text-sky-800 block mb-0.5">🎓 Student Corner</span>
+                  Be specific with your topic or ask for step-by-step breakdowns (e.g., "Explain quantum computing simply").
+                </li>
+                <li className="bg-slate-900/5 p-2 rounded-xl border border-slate-200/60">
+                  <span className="font-bold text-slate-800 block mb-0.5">👩‍🏫 Teacher Corner</span>
+                  Include your target grade level and learning objectives for precise lesson plans or fact checks.
+                </li>
+                <li className="bg-pink-50/60 p-2 rounded-xl border border-pink-100">
+                  <span className="font-bold text-pink-900 block mb-0.5">👨‍👩‍👧 Parent Corner</span>
+                  Mention available household materials or time limits when planning home projects.
+                </li>
+              </ul>
             </div>
 
           </div>
@@ -320,16 +355,18 @@ export default function App() {
                 <h5 className="font-bold text-xs text-sky-900">Sneha</h5>
                 <span className="text-[10px] bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full font-semibold">1st Creator</span>
               </div>
-              {/* <div className="bg-sky-50/80 p-3 rounded-2xl border border-sky-200 text-center space-y-1">
+
+               <div className="bg-sky-50/80 p-3 rounded-2xl border border-sky-200 text-center space-y-1">
                 <div className="w-10 h-10 mx-auto rounded-full bg-gradient-to-tr from-sky-500 to-indigo-500 flex items-center justify-center text-white text-base shadow-md">👦🏽</div>
                 <h5 className="font-bold text-xs text-sky-900">Shivtej</h5>
                 <span className="text-[10px] bg-sky-100 text-sky-700 px-2 py-0.5 rounded-full font-semibold">Developer</span>
               </div>
+
               <div className="bg-sky-50/80 p-3 rounded-2xl border border-sky-200 text-center space-y-1">
                 <div className="w-10 h-10 mx-auto rounded-full bg-gradient-to-tr from-pink-400 to-purple-500 flex items-center justify-center text-white text-base shadow-md">👧🏽</div>
                 <h5 className="font-bold text-xs text-sky-900">Sanika</h5>
                 <span className="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-semibold">Developer</span>
-              </div> */}
+              </div> 
             </div>
 
             {/* Info Body */}
@@ -398,7 +435,7 @@ export default function App() {
                 <h5 className="font-bold text-xs text-sky-900">Sneha</h5>
                 <span className="text-[10px] bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full font-semibold">1st Creator</span>
               </div>
-              {/* <div className="bg-sky-50/80 p-3 rounded-2xl border border-sky-200 text-center space-y-1">
+               <div className="bg-sky-50/80 p-3 rounded-2xl border border-sky-200 text-center space-y-1">
                 <div className="w-10 h-10 mx-auto rounded-full bg-gradient-to-tr from-sky-500 to-indigo-500 flex items-center justify-center text-white text-base shadow-md">👦🏽</div>
                 <h5 className="font-bold text-xs text-sky-900">Shivtej</h5>
                 <span className="text-[10px] bg-sky-100 text-sky-700 px-2 py-0.5 rounded-full font-semibold">Developer</span>
@@ -407,7 +444,7 @@ export default function App() {
                 <div className="w-10 h-10 mx-auto rounded-full bg-gradient-to-tr from-pink-400 to-purple-500 flex items-center justify-center text-white text-base shadow-md">👧🏽</div>
                 <h5 className="font-bold text-xs text-sky-900">Sanika</h5>
                 <span className="text-[10px] bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full font-semibold">Developer</span>
-              </div> */}
+              </div> 
             </div>
 
             {/* Tips Body */}

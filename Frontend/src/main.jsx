@@ -7,3 +7,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
+export const SUBJECT_ICONS = {
+  Mathematics: '📐',
+  Physics: '⚛️',
+  Biology: '🔬',
+  Geology: '⛰️',
+  Psychology: '🧠',
+  Chemistry: '🧪',
+  Literature: '📖',
+  History: '🏛️',
+  Programming: '💻',
+};
